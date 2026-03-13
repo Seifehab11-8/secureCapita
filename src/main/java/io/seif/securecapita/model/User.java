@@ -2,8 +2,6 @@ package io.seif.securecapita.model;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,16 +20,12 @@ public class User {
     private Integer userId; /* Integer is an object and initially it = null which aligns with sql standard */
 
     @Column(name = "first_name", nullable = false)
-    @NotEmpty(message = "Please Enter the First name")
     private String firstName;
 
     @Column(name = "last_name", nullable = false)
-    @NotEmpty(message = "Please Enter the Last name")
     private String lastName;
 
     @Column(name = "email", nullable = false)
-    @NotEmpty(message = "Please Enter the email")
-    @Email(message = "Email is incorrect, Please Enter valid email")
     private String email;
 
     @Column(name = "password")
